@@ -235,6 +235,7 @@
  .video-image>img {
    display: block;
    max-width: 100%;
+   border-radius: .5rem;
  }
 
 
@@ -260,12 +261,15 @@
 
  .channel-logo>img {
    border-radius: 50%;
+   height: 36px;
+   width: 36px;
  }
 
  .info-data {
    display: flex;
    flex-direction: column;
    flex: 1;
+   padding-top: .75rem;
  }
 
  .video-title-text {
@@ -274,6 +278,7 @@
 
  .video-menu {
    flex: 0;
+   padding-top: .75rem;
  }
 
 
