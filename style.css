@@ -134,8 +134,6 @@ header {
   text-wrap: nowrap;
 }
 
-/* -- MAIN -- */
-
 /* ----- SIDEBAR ----- */
 aside {
   display: none;
@@ -187,17 +185,21 @@ aside {
 
 .wide-menu-item {
   display: flex;
-
+  align-items: center;
   list-style-type: none;
   /* border: red solid 1px; */
   /* padding: 1.25rem .35rem; */
-  padding: 1rem 0 0 .5rem;
-  margin-left: .5rem;
+  padding: .5rem 4rem .5rem .75rem;
+  margin-left: .6rem;
   border-radius: .625rem;
 }
 
+.wide-menu>ul:first-child {
+  padding-top: 1rem;
+}
+
 .wide-menu-selected {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(39, 39, 39);
 }
 
 .wide-menu-item>a {
@@ -210,7 +212,23 @@ aside {
   font-size: .9rem;
 }
 
+hr.wide-menu-divider {
+  margin-left: 0;
+  margin-right: 0;
+  border: #3f3f3f solid 1px;
 
+}
+
+.wide-menu-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+  padding-left: 1.1rem;
+  font-size: .85rem;
+}
+
+/* -- MAIN -- */
 .main-video-content-wrapper {
   display: flex;
   flex-direction: column;
@@ -342,6 +360,8 @@ aside {
 }
 
 
+/* ----- MEDIA QUERIES ----- */
+/* Show the narrow sidebar */
 @media (min-width: 791px) {
   aside {
     display: block;
@@ -360,6 +380,7 @@ aside {
   }
 }
 
+/* Show the ide sidebar and make it scrollable */
 @media (min-width: 1313px) {
   aside {
     display: block;
@@ -371,9 +392,25 @@ aside {
 
   .wide-menu {
     display: block;
+    overflow-y: auto;
+    /*FIXME:*/
+    max-height: 90vh;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .wide-menu:hover {
+    scrollbar-color: hsl(0, 0%, 44%) transparent;
   }
 
   :root {
     --sidebar-width: 15rem;
+  }
+}
+
+/* 6 columns maximum */
+@media (min-width: 2545px) {
+  .main-video-content {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
