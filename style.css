@@ -1,7 +1,6 @@
 :root {
   --main-header-hight: 3.5rem;
   --sidebar-width: 0rem;
-  /* no sidebar */
 }
 
 * {
@@ -16,22 +15,16 @@ body {
   color: white;
 }
 
-.video-card,
-.video-image,
-.video-length,
-.video-data,
-.channel-logo,
-.info-data,
-span {
-  /* border: red dashed 1px; */
-}
 
 /* -- HEADER -- */
+.main-header-wrapper {
+  padding: 0 1rem;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-top: .75rem; */
   padding: 0 1rem 0 1rem;
   height: var(--main-header-hight);
   position: fixed;
@@ -42,14 +35,12 @@ header {
   z-index: 999;
 }
 
-.main-header-wrapper {
-  padding: 0 1rem;
-}
 
 .start {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 0 0 10px;
 }
 
 .burger-menu {
@@ -58,6 +49,9 @@ header {
 
 .logo {
   font-size: 1.8rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: .2rem;
 }
 
 .logo>img {
@@ -71,13 +65,19 @@ header {
 }
 
 .center {
-  display: flex;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
   gap: 1rem;
+  flex: 1 1 auto;
 }
 
 .search {
   display: flex;
   align-items: center;
+  /* max-width: 579px; */
+  max-width: 60%;
+  flex: 1 1 auto;
 }
 
 .search-field {
@@ -87,7 +87,8 @@ header {
   background-color: #121212;
   font-size: 1rem;
   color: #777;
-  width: 400px;
+  max-width: 515px;
+  flex: 1 1 auto;
 }
 
 .search-button {
@@ -99,6 +100,7 @@ header {
   background-color: hsl(0, 0%, 18.82%);
   height: 40px;
   width: 64px;
+  flex: 0 0 64px;
 }
 
 .mic {
@@ -113,7 +115,16 @@ header {
 
 .end {
   display: flex;
-  gap: 1em;
+  /* gap: 1em; */
+  flex: 0 0 10px;
+}
+
+.search-mini-header {
+  display: flex;
+  align-items: center;
+  /* height: 40px;
+  width: 40px; */
+
 }
 
 .dot-menu {
@@ -204,7 +215,6 @@ aside {
 
 .wide-menu-item>a {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   gap: 1.5rem;
   text-decoration: none;
@@ -273,7 +283,6 @@ hr.wide-menu-divider {
 }
 
 .right-arrow {
-  /* display: inline-flex; */
   display: flex;
   justify-content: right;
   align-items: center;
@@ -348,6 +357,12 @@ hr.wide-menu-divider {
   flex-direction: column;
   flex: 1;
   padding-top: .75rem;
+}
+
+.video-meta {
+  color: #aaa;
+  font-size: .85rem;
+  line-height: 1.2rem;
 }
 
 .video-title-text {
